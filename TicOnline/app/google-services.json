@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "71655725716",
+    "firebase_url": "https://ticonline.firebaseio.com",
+    "project_id": "ticonline",
+    "storage_bucket": "ticonline.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71655725716:android:dc241b8196b12c8c0b3281",
+        "android_client_info": {
+          "package_name": "com.example.ticonline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71655725716-0utvud3a3bijbs5qkpn10hs85o1fdg63.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ticonline",
+            "certificate_hash": "4067d323aa0fd801448110be2b548a87a0579ccf"
+          }
+        },
+        {
+          "client_id": "71655725716-d0iq33og5j0lr4hcv399n2fcao99cgbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6QpXryLfQkDqd_BVXfwCrFonPKN9DI20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71655725716-d0iq33og5j0lr4hcv399n2fcao99cgbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
