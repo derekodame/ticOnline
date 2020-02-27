@@ -8,9 +8,12 @@
 
     <TableLayout
 
+        android:id="@+id/tableLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
         android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
         tools:context=".MainActivity">
 
         <TableRow
@@ -85,4 +88,22 @@
                 android:onClick="bclick" />
         </TableRow>
     </TableLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="signout"
+        android:text="LogOut"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Eview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
