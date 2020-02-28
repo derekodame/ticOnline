@@ -23,7 +23,27 @@ class reg : AppCompatActivity() {
         val email = rEmail.text.toString()
         val password:String = rPassword.text.toString()
 
-        registerr(email,password)
+        if(personn!=""){
+            if((email!="" )){
+                if(android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    if (password != "") {
+                        if (password.length>6) {
+                            registerr(email, password)
+                        } else {
+                            Toast.makeText(applicationContext, "password length too small", Toast.LENGTH_LONG)
+                                .show()
+                        }
+                    }else {
+                        Toast.makeText(applicationContext, "Input password", Toast.LENGTH_LONG)
+                        .show()
+                    }
+                }else {
+                    Toast.makeText(applicationContext, "Input correct eamil", Toast.LENGTH_LONG)
+                        .show() }
+            }else{Toast.makeText(applicationContext, "Input email", Toast.LENGTH_LONG).show() }
+        }else {Toast.makeText(applicationContext, "Input Name", Toast.LENGTH_LONG).show() }
+
+
 
     }
 
