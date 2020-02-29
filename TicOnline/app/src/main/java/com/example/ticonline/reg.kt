@@ -6,10 +6,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_reg.*
 
 class reg : AppCompatActivity() {
     private var mAuth: FirebaseAuth? = null
+    private var database=FirebaseDatabase.getInstance()
+    private var refddatabase = database.reference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,6 +72,9 @@ class reg : AppCompatActivity() {
 
 
         if(currentUser!=null) {
+
+            refddatabase.child("Users").child(currentUser!!.uid).setValue(currentUser!!.email)
+
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("email",currentUser!!.email)
             intent.putExtra("uid",currentUser!!.uid)

@@ -8,12 +8,16 @@ import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_reg.*
 
 
 class login : AppCompatActivity() {
     private var mAuth: FirebaseAuth? = null
+    private var database= FirebaseDatabase.getInstance()
+    private var refddatabase = database.reference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,16 +43,24 @@ class login : AppCompatActivity() {
 
     }
 
-    fun loginset (email:String , password:String){
+    fun loginset (eemail:String , ppassword:String){
+
+     email.isEnabled = false
+     password.isEnabled = false
+
         var currentuser = mAuth!!.currentUser
-        mAuth!!.signInWithEmailAndPassword(email, password)
+        mAuth!!.signInWithEmailAndPassword(eemail, ppassword)
             .addOnCompleteListener(this){task ->
+                Toast.makeText(applicationContext, "Processing Data", Toast.LENGTH_LONG).show()
+
                 if(task.isSuccessful){
                     Toast.makeText(applicationContext, "LogIn was successful", Toast.LENGTH_LONG).show()
 
                      ifloginAlready()
                 } else {
                     Toast.makeText(applicationContext, "Unable to login", Toast.LENGTH_LONG).show()
+                    email.isEnabled = true
+                    password.isEnabled = true
                 }
 
              }
@@ -67,9 +79,12 @@ fun ifloginAlready(){
 
 
     if(currentUser!=null) {
+        refddatabase.child("Users").child(currentUser.uid).setValue(currentUser.email)
+
+
         val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("email",currentUser!!.email)
-        intent.putExtra("uid",currentUser!!.uid)
+        intent.putExtra("email",currentUser.email)
+        intent.putExtra("uid",currentUser.uid)
         startActivity(intent)
     }
 }

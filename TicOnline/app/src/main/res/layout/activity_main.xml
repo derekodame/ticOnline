@@ -38,18 +38,17 @@
                 android:layout_width="40pt"
                 android:layout_height="40pt"
                 android:onClick="bclick" />
+            <Button
+                android:id="@+id/b4"
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:onClick="bclick" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
-
-            <Button
-                android:id="@+id/b4"
-                android:layout_width="40pt"
-                android:layout_height="40pt"
-                android:onClick="bclick" />
 
             <Button
                 android:id="@+id/b5"
@@ -62,6 +61,17 @@
                 android:layout_width="40pt"
                 android:layout_height="40pt"
                 android:onClick="bclick" />
+
+            <Button
+                android:id="@+id/b7"
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:onClick="bclick" />
+            <Button
+                android:id="@+id/b8"
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:onClick="bclick" />
         </TableRow>
 
         <TableRow
@@ -70,19 +80,52 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/b7"
-                android:layout_width="40pt"
-                android:layout_height="40pt"
-                android:onClick="bclick" />
-
-            <Button
-                android:id="@+id/b8"
-                android:layout_width="40pt"
-                android:layout_height="40pt"
-                android:onClick="bclick" />
-
-            <Button
                 android:id="@+id/b9"
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:onClick="bclick" />
+
+            <Button
+                android:id="@+id/b10"
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:onClick="bclick" />
+
+            <Button
+                android:id="@+id/b11"
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:onClick="bclick" />
+            <Button
+                android:id="@+id/b12"
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:onClick="bclick" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/b13"
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:onClick="bclick" />
+
+            <Button
+                android:id="@+id/b14"
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:onClick="bclick" />
+
+            <Button
+                android:id="@+id/b15"
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:onClick="bclick" />
+            <Button
+                android:id="@+id/b16"
                 android:layout_width="40pt"
                 android:layout_height="40pt"
                 android:onClick="bclick" />
@@ -106,4 +149,15 @@
         app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="reset"
+        android:text="reset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

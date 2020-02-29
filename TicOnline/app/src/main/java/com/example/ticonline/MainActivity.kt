@@ -41,6 +41,15 @@ class MainActivity : AppCompatActivity() {
             R.id.b7->cellid=7
             R.id.b8->cellid=8
             R.id.b9->cellid=9
+            R.id.b10->cellid=10
+            R.id.b11->cellid=11
+            R.id.b12->cellid=12
+            R.id.b13->cellid=13
+            R.id.b14->cellid=14
+            R.id.b15->cellid=15
+            R.id.b16->cellid=16
+
+
 
         }
 
@@ -52,9 +61,13 @@ class MainActivity : AppCompatActivity() {
     //Function for the games.....
     var player1= ArrayList<Int>()
     var player2= ArrayList<Int>()
+    var alll = ArrayList<Int>()
     var ActivePlayer = 1
 
+
     fun PlayGame(cellid:Int, bselect: Button){
+
+
 
         if(ActivePlayer==1){
             bselect.text="X"
@@ -91,7 +104,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             pictureDialog.show()
-        } else {
+        } else if(winner==2) {
             val intent = Intent(this,this::class.java)
 
 
@@ -107,7 +120,16 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             pictureDialog.show()
-        }
+
+            }
+
+
+
+  }
+
+    fun reset(view:View){
+        val intent = Intent(this,this::class.java)
+        startActivity(intent)
     }
 
     //function for winner
@@ -115,65 +137,94 @@ class MainActivity : AppCompatActivity() {
         var winner=-1
 
         //row 1
-        if(player1.contains(1)&& player1.contains(2)&&player1.contains(3)){
+        if(player1.contains(1)&& player1.contains(2)&&player1.contains(3)&&player1.contains(4)){
             winner=1
 
 
 
         }
 
-        if(player2.contains(1)&& player2.contains(2)&&player2.contains(3)){
+        if(player2.contains(1)&& player2.contains(2)&&player2.contains(3)&&player2.contains(4)){
             winner=2
         }
 
         //row 2
-        if(player1.contains(4)&& player1.contains(5)&&player1.contains(6)){
+        if(player1.contains(5)&& player1.contains(6)&&player1.contains(7)&&player1.contains(8)){
             winner=1
         }
 
-        if(player2.contains(4)&& player2.contains(5)&&player2.contains(6)){
+        if(player2.contains(5)&& player2.contains(6)&&player2.contains(7)&&player2.contains(8)){
             winner=2
         }
 
         //row 3
 
-        if(player1.contains(7)&& player1.contains(8)&&player1.contains(9)){
+        if(player1.contains(9)&& player1.contains(10)&&player1.contains(11)&&player2.contains(12)){
             winner=1
         }
 
-        if(player2.contains(7)&& player2.contains(8)&&player2.contains(9)){
+        if(player2.contains(9)&& player2.contains(10)&&player2.contains(11)&&player1.contains(12)){
             winner=2
         }
 
         //column 1
 
-        if(player1.contains(1)&& player1.contains(4)&&player1.contains(7)){
+        if(player1.contains(1)&& player1.contains(5)&&player1.contains(9)&&player1.contains(13)){
             winner=1
         }
 
-        if(player2.contains(1)&& player2.contains(4)&&player2.contains(7)){
+        if(player2.contains(1)&& player2.contains(5)&&player2.contains(9)&&player2.contains(13)){
             winner=2
         }
 
         //column 2
 
-        if(player1.contains(2)&& player1.contains(5)&&player1.contains(8)){
+        if(player1.contains(2)&& player1.contains(6)&&player1.contains(10)&&player1.contains(14)){
             winner=1
         }
 
-        if(player2.contains(2)&& player2.contains(5)&&player2.contains(8)){
+        if(player2.contains(2)&& player2.contains(6)&&player2.contains(10)&&player2.contains(14)){
             winner=2
         }
 
-        //column 1
+        //column 3
 
-        if(player1.contains(3)&& player1.contains(6)&&player1.contains(9)){
+        if(player1.contains(3)&& player1.contains(7)&&player1.contains(11)&&player1.contains(15)){
             winner=1
         }
 
-        if(player2.contains(3)&& player2.contains(6)&&player2.contains(9)){
+        if(player2.contains(3)&& player2.contains(7)&&player2.contains(11)&&player2.contains(15)){
             winner=2
         }
+
+        //column 4
+
+        if(player1.contains(4)&& player1.contains(8)&&player1.contains(12)&&player1.contains(16)){
+            winner=1
+        }
+
+        if(player2.contains(4)&& player2.contains(8)&&player2.contains(12)&&player2.contains(16)){
+            winner=2
+        }
+
+        //diagonal 1
+        if(player1.contains(1)&& player1.contains(6)&&player1.contains(11)&&player1.contains(16)){
+            winner=1
+        }
+
+        if(player2.contains(1)&& player2.contains(6)&&player2.contains(11)&&player2.contains(16)){
+            winner=2
+        }
+
+        //diagonal 2
+        if(player1.contains(4)&& player1.contains(7)&&player1.contains(10)&&player1.contains(13)){
+            winner=1
+        }
+
+        if(player2.contains(4)&& player2.contains(7)&&player2.contains(10)&&player2.contains(13)){
+            winner=2
+        }
+
 
         if(winner !=-1){
 
@@ -181,13 +232,13 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "player 1 wins" , Toast.LENGTH_LONG).show()
                 resett(winner)
 
-            }else {
+            }else if(winner==2) {
                 Toast.makeText(this, "player 2 wins", Toast.LENGTH_LONG).show()
                 resett(winner)
             }
 
         } else {
-            //Toast.makeText(applicationContext, "done", Toast.LENGTH_LONG).show()
+            //Toast.makeText(applicationContext, "Draw!!", Toast.LENGTH_LONG).show()
 
         }
 
@@ -197,7 +248,7 @@ class MainActivity : AppCompatActivity() {
 
     fun autoplay(){
         var emptyCell =ArrayList<Int>()
-        for (cellid in 1..9){
+        for (cellid in 1..16){
             if(!(player1.contains(cellid)|| player2.contains(cellid))){
                 emptyCell.add(cellid)
 
@@ -220,6 +271,13 @@ class MainActivity : AppCompatActivity() {
             7->bselect=b7
             8->bselect=b8
             9->bselect=b9
+            10->bselect=b10
+            11->bselect=b11
+            12->bselect=b12
+            13->bselect=b13
+            14->bselect=b14
+            15->bselect=b15
+            16->bselect=b16
             else->{
                 bselect=b1
             }
