@@ -159,11 +159,21 @@ class MainActivity : AppCompatActivity() {
 
         //row 3
 
-        if(player1.contains(9)&& player1.contains(10)&&player1.contains(11)&&player2.contains(12)){
+        if(player1.contains(9)&& player1.contains(10)&&player1.contains(11)&&player1.contains(12)){
             winner=1
         }
 
-        if(player2.contains(9)&& player2.contains(10)&&player2.contains(11)&&player1.contains(12)){
+        if(player2.contains(9)&& player2.contains(10)&&player2.contains(11)&&player2.contains(12)){
+            winner=2
+        }
+
+        //row 4
+
+        if(player1.contains(13)&& player1.contains(14)&&player1.contains(15)&&player2.contains(16)){
+            winner=1
+        }
+
+        if(player2.contains(3)&& player2.contains(14)&&player2.contains(15)&&player1.contains(16)){
             winner=2
         }
 
