@@ -304,4 +304,9 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, login::class.java)
         startActivity(intent)
     }
+    override fun onBackPressed() {
+
+        Toast.makeText(applicationContext, "Disabled!!", Toast.LENGTH_LONG).show()
+
+    }
 }

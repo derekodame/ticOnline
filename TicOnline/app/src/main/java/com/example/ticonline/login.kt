@@ -70,7 +70,7 @@ class login : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
-         ifloginAlready()
+        ifloginAlready()
     }
 
 
@@ -94,5 +94,15 @@ fun ifloginAlready(){
         val intent = Intent(this, reg::class.java)
 
         startActivity(intent)
+    }
+
+    override fun onBackPressed() {
+
+       // Toast.makeText(applicationContext, "Disabled!!", Toast.LENGTH_LONG).show()
+       // moveTaskToBack(true)
+
+       // System.exit(0)
+
+        finishAffinity()
     }
 }
